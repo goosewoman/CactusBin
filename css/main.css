@@ -1,0 +1,334 @@
+/*
+CSS Copyright Radthorne.com and MrRadthorne (Luuk Jacobs) and may not be reused without his permission.
+*/
+body {
+	background-color:#999;
+	color:#0648BA;
+	font-family:segoe ui, Palatino Linotype, Book Antiqua, Palatino, serif;
+	margin:0px;
+}
+a {
+text-decoration:none;
+}
+img {
+border: 0px;
+}
+#header a:link {color:#00FF00;}
+#header a:visited {color:#00FF00;}
+#header a:hover {color:blue;}
+#header a:active {color:#0000FF;} 
+
+a:link {color:#CC2200;}
+a:visited {color:#CC2200;}
+a:hover {color:#A55858;}
+a:active {color:#0000FF;}
+ 
+#header {
+	font-weight:bold;
+	margin:0 auto;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:5px;
+	margin-bottom:15px;
+	width:990px;
+	height:45px;
+	background-color:#444;
+	border-width:3px;
+	border-color:#555;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	-moz-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+}
+#sidebar {
+	padding: 8px;
+	padding-left:15px;
+
+	float:left;
+	-webkit-border-radius: 0px 4px 0px 0px;
+	-moz-border-radius: 0px 4px 0px 0px;
+	border-radius: 0px 4px 0px 0px;
+	width: 177px;
+	height: 1079px;
+	border-left: 1px dotted black;
+	
+}
+.main {
+	background-color:#ccc;
+}
+
+.sidebarPaste {
+	border-top: 1px dotted grey;
+	padding: 4px;
+	font-size: 12px;
+	overflow:hidden;
+}
+#footer {
+	clear:both;
+	top: 720px;
+
+	height: 80px;
+	width: 976px;
+	padding-left:25px;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	-moz-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+	border-top: 1px dotted black;
+}
+
+#maindiv {
+	margin:0 auto;
+	width:1020px;
+	height:1180px;
+	padding-left:20px;
+	padding-right:0px;
+	padding-top:0px;
+	padding-bottom: 50px;
+}
+
+#h2{
+	font-size: 20px;
+}
+#pastetitle {
+	border-bottom: 1px dotted grey;
+	font-size:30px;
+	font-style:bold;
+	width:750px;
+	height: 40px;
+	margin-bottom:20px;
+	margin:0 auto 0 auto;
+	text-align:left
+}
+
+#passwordarea {
+	margin-top: 10px;
+}
+input.title {
+	width: 250px;
+}
+
+#content {
+	float:left;
+
+	width:750px;
+	height:1060px;
+	margin:0 auto;
+	padding-left:25px;
+	padding-right:25px;
+	padding-top:10px;
+	padding-bottom:25px;
+	-webkit-border-radius:4px 0px 0px 0px;
+	-moz-border-radius: 4px 0px 0px 0px;
+	border-radius: 4px 0px 0px 0px;
+}
+
+#notepadarea {
+	margin-top:10px;
+	text-align:left;
+	font-family:Consolas;
+	font-size:13px;
+	background-color:inherit;
+	border: 1px solid black;
+	color:#000;
+	width:750px;
+	height:575px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	resize:none;
+}
+pre#notepadarea{
+	overflow:auto;
+}
+#pasteData {
+	top: -4px;
+	font-size:10px;
+}
+table {
+border-spacing:0;
+border-collapse:collapse;
+}
+#memberlist {
+	margin-top:10px;
+}
+#memberlist td{
+	padding: 8px;
+	border: 1px dotted black;
+}
+#memberlist th {
+	background-color:#999;
+	border: 1px solid black;
+}
+#memberlist table {
+	width: 750px;
+}
+
+
+#userinfo {
+	border: 1px dotted gray;
+	width: 750px;
+	height: 105px;
+}
+#title {
+	float:right;
+	font-size:30px;
+	width:636px;
+	height: 40px;
+	text-align:left;
+	padding: 3px;
+}
+#userdata {
+	float:right;
+    font-size:10px;
+	width:638px;
+	height: 40px;
+	text-align:left;
+	padding: 1px;
+}
+#avatar {
+	position: relative;
+	border: 1px dotted gray;
+	width: 90px;
+	height: 90px;
+	padding: 1px;
+	margin:5px 5px 5px 5px;
+}
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+#notice {
+	position:absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	z-index:9000;
+	top:50%;
+	bottom:-20;
+	font-size:20px;
+	visibility:hidden;
+	padding: 8px 8px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+	border: 1px solid #EED3D7;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	max-width: 600px;
+	height: 30px;
+	color: #B94A48;
+	background-color: #F2DEDE;
+}
+
+#noticeclose {
+	float:right;
+	font-size:8px;
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+#navContainer ul#logo {
+	float: left;
+}
+#navContainer ul {
+	margin-top:0px;
+	padding: 0px;
+	float: right;
+
+}
+
+#navContainer li {
+	float: left; 
+	list-style: none; 
+	background-image: url(../img/nav-sprite.png); 
+	background-repeat: no-repeat; 
+	padding: 0px 0px; 
+	position: relative;
+	border:0px;
+}
+
+#navContainer li {
+	background-position: -10px 0px;
+}
+
+#navContainer li.last {
+	background-position: top right; 
+	padding-right: 1px;
+}
+
+#navContainer li.last a {
+	border-right: 2px solid #666;
+}
+
+#navContainer li.first {
+	background-position: 0 0; 
+}
+#navContainer li.first a {
+	border-left: 2px solid #666;
+}
+#navContainer li.logo a.loggedout {
+	border-left: 2px solid #666;
+	border-right: 2px solid #666;
+	padding:6px;
+	padding-left:4px;
+	padding-right:4px;
+}
+#navContainer li.logo a.loggedin {
+	border-left: 2px solid #666;
+	border-right: 0px solid #666;
+	padding:6px;
+	padding-left:4px;
+	padding-right:5px;
+}
+.ie9 #navContainer li.logo a.loggedin {
+	border-left: 2px solid #666;
+	border-right: 0px solid #666;
+	padding:6px;
+	padding-left:7px;
+	padding-right:7px;
+}
+
+.ie9 #navContainer li a {
+	display: block; 
+	padding: 17px 19px 16px; 
+	text-decoration: none; 
+	font-size: 12px; 
+	letter-spacing: 1px; 
+	border-right: 1px solid #666; 
+	border-left: 1px solid #666;
+}
+#navContainer li a {
+	display: block; 
+	padding: 17px 20px 16px; 
+	text-decoration: none; 
+	font-size: 12px; 
+	letter-spacing: 1px; 
+	border-right: 1px solid #666; 
+	border-left: 1px solid #666;
+}
+
+#navContainer li a:hover, #navContainer li.active a {
+	background: url(../img/hov-bg.png) repeat;
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+.pastelist {
+margin-top: 10px;
+width: 750px;
+}
+
+.pastelist td{
+	padding: 8px;
+	border: 1px dotted black;
+}
+.pastelist th {
+	background-color:#999;
+	border: 1px solid black;
+}
+.pastelist td.time {
+width: 150px;
+}
+.pastelist td.username {
+width: 150px;
+}
+.pastelist td.title {
+width: 450px;
+overflow: hidden;
+}
