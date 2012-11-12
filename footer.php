@@ -9,5 +9,5 @@ if ($speed_check_runtime < 0) {
 }
 ?>
 <p>Page generated in <?php echo $speed_check_runtime; ?> seconds.<br />
-Created by MrRadthorne (Luuk Jacobs).</p>
+<a href="copyright.php">&copy; MrRadthorne (Luuk Jacobs)</a>.</p>
 </div>
