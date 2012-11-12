@@ -11,11 +11,12 @@ tmp/
 *.bak
 *.swp
 *~.nib
+*.jpeg
 local.properties
 .classpath
 .settings/
 .loadpath
-
+.htaccess
 # External tool builders
 .externalToolBuilders/
 
