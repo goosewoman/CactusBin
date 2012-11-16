@@ -5,6 +5,7 @@
 ";?>
 <html>
   <head>
+	<title></title>
   <link rel="stylesheet" href="http://<?php echo "{$_SERVER['SERVER_NAME']}"; ?>/css/main.css" />
   <?php echo commonJs(); ?>
   </head>
@@ -16,6 +17,7 @@
 	<?php include_once("header.php"); //HEADER ?>
 	<div id="maindiv">
 		<div id="content" class="main">
+		
 		</div>
 		<?php include_once("sidebar.php"); //SIDEBAR ?>
 		<?php include_once("footer.php"); //FOOTER ?>
