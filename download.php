@@ -5,7 +5,8 @@ if (isset($_GET["id"])) {
         $query = "
             SELECT 
 				content,
-				password
+				password,
+				id
 			FROM 
 				pastes 
 			WHERE 
@@ -24,18 +25,23 @@ if (isset($_GET["id"])) {
             if ($rows) {
                 foreach ($rows as $row):
 					$password = htmlentities($row['password'], ENT_QUOTES, 'UTF-8');
+					$ID = htmlentities($row['id'], ENT_QUOTES, 'UTF-8');
                     $content = htmlentities($row['content'], ENT_QUOTES, 'UTF-8');
+					$content = str_replace("\n", "\r\n", $content);
                 endforeach;
 				if ($password == "") {
 header('Content-Type: text/plain; charset=utf-8');
+$filename = "Paste_" . $ID;
+header("Content-disposition: attachment; filename=" . $filename . ".txt");
+ob_start();
 echo $content;
-
+exit;
 
                 } else {
                     if (!isset($_POST['password'])) {
 ?>
 							<div id="passwordarea">
-								<form action="rawpaste.php?id=<?php echo $pasteId; ?>" method="post" >
+								<form action="download.php?id=<?php echo $pasteId; ?>" method="post" >
 									Password: <input type="password" name="password" autocomplete="off" value="" />
 									<input type="submit" value="submit" />
 								</form>
@@ -43,13 +49,17 @@ echo $content;
 							<?php
                     } else {
                         if ($password == $_POST['password']) {
-header('Content-Type: text/plain; charset=utf-8');						
+header('Content-Type: text/plain; charset=utf-8');
+$filename = "Paste_" . $ID;
+header("Content-disposition: attachment; filename=" . $filename . ".txt");
+ob_start();
 echo $content;
+exit;
                         } else {
                             echo notice("Invalid Password.");
 							?>
 							<div id="passwordarea">
-								<form action="rawpaste.php?id=<?php echo $pasteId; ?>" method="post" >
+								<form action="download.php?id=<?php echo $pasteId; ?>" method="post" >
 									Password: <input type="password" name="password" autocomplete="off" value="" />
 									<input type="submit" value="submit" />
 								</form>
