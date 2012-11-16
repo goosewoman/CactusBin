@@ -1,4 +1,4 @@
-<?php
+ <?php
 	function exec_speed_check(){
     $speed_check_mtime = explode(" ", microtime());
     $speed_check_msec = (double) $speed_check_mtime[0];
@@ -21,7 +21,8 @@
     }
     catch(PDOException $ex)
     {
-        die("Failed to connect to the database");
+		
+        die("Failed to connect to the database: " . $ex->getMessage());
     }
     
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -86,6 +87,7 @@
 				showNotice('$reason');
 			</script>";
 	}
+	
 	function time_diff($time){
 	$timenow = time();
 	$s = $timenow -$time;
@@ -115,6 +117,5 @@
 			$td = "$d day"; if($d>1) $td .= "s";
 			$td .= " ago";
 		}
-		return $td;
-	}
-	
+    return $td;
+}
