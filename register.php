@@ -7,21 +7,21 @@ echo "<!DOCTYPE html>
 ";
 ?>
 <html>
-	<head>
-		<title>Register an account.</title>
-		<link rel="stylesheet" href="http://<?php echo "{$_SERVER['SERVER_NAME']}"; ?>/css/main.css" />
-		<style type="text/css">
-		</style>
-		<?php echo commonJs(); ?>
-	</head>
-	<body>
-		<a href="javascript:hideNotice();">
-		<div id="notice">
-		</div>
-		</a>
-		<?php include_once ("header.php"); //HEADER ?>
-		<div id="maindiv">
-			<div id="content" class="main">
+    <head>
+        <title>Register an account.</title>
+        <link rel="stylesheet" href="http://<?php echo "{$_SERVER['SERVER_NAME']}"; ?>/css/main.css" />
+        <style type="text/css">
+        </style>
+        <?php echo commonJs(); ?>
+    </head>
+    <body>
+        <a href="javascript:hideNotice();">
+        <div id="notice">
+        </div>
+        </a>
+        <?php include_once ("header.php"); //HEADER ?>
+        <div id="maindiv">
+            <div id="content" class="main">
 
 <?php
 if (isset($_SESSION['user'])) {
@@ -94,15 +94,15 @@ if (!empty($_POST)) {
                 password,
                 salt,
                 email,
-				joindate,
-				avatar
+                joindate,
+                avatar
             ) VALUES (
                 :username,
                 :password,
                 :salt,
                 :email,
-				:joindate,
-				:avatar
+                :joindate,
+                :avatar
             )
         ";
 
@@ -115,7 +115,7 @@ if (!empty($_POST)) {
     }
 
     try {
-		$avatar = "http://{$_SERVER['SERVER_NAME']}/avatars/default.png";
+        $avatar = "http://{$_SERVER['SERVER_NAME']}/avatars/default.png";
         $time = date("Y-m-d H:i:s");
         $stmt = $db->prepare($query);
         $stmt->bindParam(':username', $_POST['username']);
@@ -149,11 +149,11 @@ if (!empty($_POST)) {
     <br /><br />
     <input type="submit" value="Register" />
 </form>	
-				</div>
-	<?php
+                </div>
+    <?php
 include ("sidebar.php");
 include ("footer.php");
 ?>
-		</div>
-	</body>
+        </div>
+    </body>
 </html>	

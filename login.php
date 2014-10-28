@@ -7,33 +7,33 @@ echo "<!DOCTYPE html>
 ";
 ?>
 <html>
-	<head>
-		<title> Log in </title>
-	<link rel="stylesheet" href="http://<?php echo "{$_SERVER['SERVER_NAME']}"; ?>/css/main.css" />
+    <head>
+        <title> Log in </title>
+    <link rel="stylesheet" href="http://<?php echo "{$_SERVER['SERVER_NAME']}"; ?>/css/main.css" />
     <style type="text/css">
     </style>
-	<?php echo commonJs(); ?>
-	</head>
-	<body>
-	<a href="javascript:hideNotice();">
-	<div id="notice">
-	</div>
-	</a>
-	<?php include_once ("header.php"); //HEADER ?>
-	<div id="maindiv">
-		<div id="content" class="main">
+    <?php echo commonJs(); ?>
+    </head>
+    <body>
+    <a href="javascript:hideNotice();">
+    <div id="notice">
+    </div>
+    </a>
+    <?php include_once ("header.php"); //HEADER ?>
+    <div id="maindiv">
+        <div id="content" class="main">
 <?php
 $submitted_username = '';
 if (!empty($_SESSION['user'])) {
 ?>
-	<form name="notice" action="index.php" method="post">
-	<input type="hidden" name="notice" value="You are already logged in.">
-	</form>
+    <form name="notice" action="index.php" method="post">
+    <input type="hidden" name="notice" value="You are already logged in.">
+    </form>
 
-	<script type="text/javascript">
-	document.notice.submit();
-	</script>
-	<?php
+    <script type="text/javascript">
+    document.notice.submit();
+    </script>
+    <?php
 }
 if (!empty($_POST)) {
 
@@ -44,10 +44,10 @@ if (!empty($_POST)) {
                 password,
                 salt,
                 email,
-				avatar,
-				occupation,
-				location,
-				website
+                avatar,
+                occupation,
+                location,
+                website
             FROM users
             WHERE
                 username = :username
@@ -114,7 +114,7 @@ EOT;
 </form>
 <a href="register.php">Register</a>
 </div>
-		</div>
-		<?php include_once ("sidebar.php"); //SIDEBAR ?>
-		<?php include_once ("footer.php"); //FOOTER ?>
-	</div>	
+        </div>
+        <?php include_once ("sidebar.php"); //SIDEBAR ?>
+        <?php include_once ("footer.php"); //FOOTER ?>
+    </div>	

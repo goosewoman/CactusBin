@@ -1,7 +1,7 @@
 <?php
 require ("common.php");
     header('Content-Type: text/html; charset=utf-8');
-	echo "<!DOCTYPE html>
+    echo "<!DOCTYPE html>
 <!--[if IE 9 ]> <html class='ie9'> <![endif]-->
 ";
 if (!empty($_POST)) {
@@ -49,10 +49,10 @@ if (!empty($_POST)) {
             UPDATE users
             SET
                 email = :email,
-				occupation = :occupation,
-				location = :location,
-				website = :website
-				
+                occupation = :occupation,
+                location = :location,
+                website = :website
+                
         ";
 
     if ($password !== null) {
@@ -89,10 +89,10 @@ if (!empty($_POST)) {
     $_SESSION['user']['occupation'] = $_POST['occupation'];
     $_SESSION['user']['location'] = $_POST['location'];
     $_SESSION['user']['website'] = $_POST['website'];
-	
-	if (is_uploaded_file($_FILES['avatar']['tmp_name'])) {
-	include("avatarprocess.php");
-	}
+    
+    if (is_uploaded_file($_FILES['avatar']['tmp_name'])) {
+    include("avatarprocess.php");
+    }
 }
 
 ?>
@@ -103,12 +103,12 @@ if (!empty($_POST)) {
   </head>
   <body>
   <a href="javascript:hideNotice();">
-	<div id="notice">
-	</div>
-	</a>
-	<?php include_once("header.php"); //HEADER ?>
-	<div id="maindiv">
-		<div id="content" class="main">
+    <div id="notice">
+    </div>
+    </a>
+    <?php include_once("header.php"); //HEADER ?>
+    <div id="maindiv">
+        <div id="content" class="main">
 <h1>Edit Account</h1>
 <form action="edit_account.php" method="post" enctype="multipart/form-data">
     Username:<br />
@@ -121,24 +121,24 @@ if (!empty($_POST)) {
     <input type="password" name="password" value="" /><br />
     <i>(leave blank if you do not want to change your password)</i>
     <br /><br />
-	Occupation:<br />
-	<input type="text" name="occupation" maxlength="30" value="<?php echo htmlentities($_SESSION['user']['occupation'], ENT_QUOTES, 'UTF-8'); ?>" />
+    Occupation:<br />
+    <input type="text" name="occupation" maxlength="30" value="<?php echo htmlentities($_SESSION['user']['occupation'], ENT_QUOTES, 'UTF-8'); ?>" />
     <br /><br />
-	location:<br />
-	<input type="text" name="location" maxlength="30" value="<?php echo htmlentities($_SESSION['user']['location'], ENT_QUOTES, 'UTF-8'); ?>" />
+    location:<br />
+    <input type="text" name="location" maxlength="30" value="<?php echo htmlentities($_SESSION['user']['location'], ENT_QUOTES, 'UTF-8'); ?>" />
     <br /><br />
-	Website:<br />
-	<input type="text" name="website" maxlength="30" value="<?php echo htmlentities($_SESSION['user']['website'], ENT_QUOTES, 'UTF-8'); ?>" />    
-	<br /><br />
-	Avatar:<br />
-	<input type="file" name="avatar" id="file" /><br />
-	Current avatar:<br />
-	<div id="avatar"><img src="<?php echo $_SESSION['user']['avatar']; ?>" alt="" /></div>
-	<input type="submit" value="Update Account" />
+    Website:<br />
+    <input type="text" name="website" maxlength="30" value="<?php echo htmlentities($_SESSION['user']['website'], ENT_QUOTES, 'UTF-8'); ?>" />    
+    <br /><br />
+    Avatar:<br />
+    <input type="file" name="avatar" id="file" /><br />
+    Current avatar:<br />
+    <div id="avatar"><img src="<?php echo $_SESSION['user']['avatar']; ?>" alt="" /></div>
+    <input type="submit" value="Update Account" />
 </form>
 </div>
-		<?php include_once("sidebar.php"); //SIDEBAR ?>
-		<?php include_once("footer.php"); //FOOTER ?>
-	</div>	
+        <?php include_once("sidebar.php"); //SIDEBAR ?>
+        <?php include_once("footer.php"); //FOOTER ?>
+    </div>	
   </body>
 </html>  

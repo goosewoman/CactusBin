@@ -4,17 +4,17 @@
 if (!empty($_SESSION['user'])) {
     $query = "
         SELECT
-			title,
-			timestamp,
-			username,
-			password,
-			id
+            title,
+            timestamp,
+            username,
+            password,
+            id
         FROM pastes
-		WHERE
+        WHERE
                 username = :username && password = ''
-		ORDER BY id DESC
-		LIMIT 9
-		";
+        ORDER BY id DESC
+        LIMIT 9
+        ";
 
     try {
         $stmt = $db->prepare($query);
@@ -45,24 +45,24 @@ if (!empty($_SESSION['user'])) {
             $title = htmlentities($row['title'], ENT_QUOTES, 'UTF-8');
 ?>
                     <div class="sidebarPaste">
-					<?php echo "<a href='paste.php?id=$id'>$title</a><br />$time";
+                    <?php echo "<a href='paste.php?id=$id'>$title</a><br />$time";
 ?>
-					</div>
+                    </div>
                 <?php
         endforeach;
     }
 }
 $query = "
         SELECT
-			title,
-			timestamp,
-			username,
-			password,
-			id
+            title,
+            timestamp,
+            username,
+            password,
+            id
         FROM pastes
-		WHERE password = ''
-		ORDER BY id DESC
-		LIMIT 9
+        WHERE password = ''
+        ORDER BY id DESC
+        LIMIT 9
     ";
 
 try {
@@ -93,9 +93,9 @@ if ($rows) {
         $title = htmlentities($row['title'], ENT_QUOTES, 'UTF-8');
 ?>
                     <div class="sidebarPaste">
-					<?php echo "<a href='paste.php?id=$id'>$title</a><br />$time";
+                    <?php echo "<a href='paste.php?id=$id'>$title</a><br />$time";
 ?>
-					</div>
+                    </div>
                 <?php
     endforeach;
 }

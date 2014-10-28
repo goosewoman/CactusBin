@@ -20,13 +20,13 @@ if (!empty($_POST)) {
     $username = "guest";
     if (isset($_SESSION['user'])) {
         $query = "
-				SELECT
-					username
-				FROM 
-					users
-				WHERE
-					username = :username
-			";
+                SELECT
+                    username
+                FROM 
+                    users
+                WHERE
+                    username = :username
+            ";
 
         try {
             $stmt = $db->prepare($query);
@@ -48,14 +48,14 @@ if (!empty($_POST)) {
                 username,
                 password,
                 content,
-				timestamp,
-				title
+                timestamp,
+                title
             ) VALUES (
                 :username,
                 :password,
                 :content,
-				:timestamp,
-				:title
+                :timestamp,
+                :title
             )
         ";
 
